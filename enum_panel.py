@@ -1,10 +1,11 @@
 import tkinter as tk
 from enum import Enum
 from collections import OrderedDict
+import re
 
 
 def to_label(text):
-    return text
+    return text[0].upper() + re.sub("([A-Z])", " \g<1>", text[1:]).lower()
 
 
 class EnumPanel(tk.Frame):
